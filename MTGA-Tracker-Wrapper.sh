@@ -84,7 +84,7 @@ if [ -z "$STL_BIN" ]; then
         if command -v kdialog &>/dev/null; then
             TOKEN="$(kdialog --title "Token Needed" --inputbox "Copy the \"Client token\" and paste it here!")"
         elif command -v zenity &>/dev/null; then
-            TOKEN="$(zenity --entry --title "Token Needed" --text="Copy the \"Client token\" and paste it here!")"
+            TOKEN="$(zenity --entry --title="Token Needed" --text="Copy the \"Client token\" and paste it here!")"
         fi
     [ -n "$TOKEN" ] && echo -e "[client]\ntoken = $TOKEN" > "$HOME/.mtga_follower.ini"
     fi
@@ -99,7 +99,7 @@ getGUI_BIN() {
         --yes-label "Choose Path" --no-label "No" --cancel-label "Ask again later"
     elif command -v zenity &>/dev/null; then
         zenity --question --title="17 Lands missing!" --text="You can have the wrapper run a Graphical Tracker alongside/instead of 17 Lands.\nDo you want to?" \
-        --yes-label "Choose Path" --no-label "No" --cancel-label "Ask again later"
+        --ok-label="Choose Path" --cancel-label="No"
     fi
 
     if [ $? -eq 0 ]; then
