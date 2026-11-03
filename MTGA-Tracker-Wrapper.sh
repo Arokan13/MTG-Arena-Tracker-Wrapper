@@ -9,10 +9,6 @@ STEAM_LIB_DIR=
 STL_BIN=
 GUI_BIN=
 
-#env - unsetting Steam's Library Paths so GUI-prompts can be made
-#unset LD_LIBRARY_PATH
-#unset LD_PRELOAD
-
 kdialog() { command env -u LD_LIBRARY_PATH -u LD_PRELOAD kdialog "$@"; }
 zenity() { command env -u LD_LIBRARY_PATH -u LD_PRELOAD zenity "$@"; }
 
